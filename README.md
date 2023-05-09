@@ -9,4 +9,5 @@ you can have a look how the api is working by going through the routes in POSTMA
  /patients/:id/create_report--for creatiing report(here also you would need to provide the bearer token)(post method)
  
  /patients/:id/all_reports---to get all the reports of a perticular patient(get method)
+ 
  /reports/:status---to show the reports according to the status of the patient(get method)
