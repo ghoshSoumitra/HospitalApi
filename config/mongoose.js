@@ -1,10 +1,19 @@
-const mongoose = require('mongoose');
 
-main().catch(err => console.log(err));
+const mongoose = require("mongoose");
 
-async function main() {
-    console.log('successfully connected to mongodb')
-  await mongoose.connect('mongodb://127.0.0.1:27017/hospital-api');
-  
+mongoose.connect(
+  "mongodb+srv://soumitra:56789123%40Sg@cluster0.qtleogu.mongodb.net/hospital-api"
+);
 
-}
+const db = mongoose.connection;
+
+db.error(
+  "error",
+  console.error.bind(console, "error in connecting with mongodb")
+);
+
+db.once("open", () => {
+  console.log("succesfully connecting with mongo db");
+});
+
+module.exports = db;
