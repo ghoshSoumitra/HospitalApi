@@ -14,7 +14,23 @@ app.use(router);
 
 //home function
 app.get('/',function(req,res){
-    res.send("hello")
+    const apiRoutes = `
+    you can have a look at how the API is working by going through the routes in the POSTMAN app:<br>
+
+    /doctors/register - for registering a doctor (POST method)<br>
+    
+    /logIn - for logging in of the doctor (POST method)<br>
+    
+    /patients/register - for registering a patient (you also need to provide the bearer token here to authenticate the doctor) (POST method)<br>
+    
+    /patients/:id/create_report - for creating a report (here also you would need to provide the bearer token) (POST method)<br>
+    
+    /patients/:id/all_reports - to get all the reports of a particular patient (GET method)<br>
+    
+    /reports/:status - to show the reports according to the status of the patient (GET method)
+  `;
+  
+  res.send(apiRoutes);
 })
 
 

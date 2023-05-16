@@ -7,13 +7,13 @@ mongoose.connect(
 
 const db = mongoose.connection;
 
-db.error(
+db.on(
   "error",
   console.error.bind(console, "error in connecting with mongodb")
 );
 
 db.once("open", () => {
-  console.log("succesfully connecting with mongo db");
+  console.log("succesfully connected with mongo db");
 });
 
 module.exports = db;
