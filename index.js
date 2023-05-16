@@ -14,7 +14,7 @@ app.use(router);
 
 //home function
 app.get('/',function(req,res){
-    const apiRoutes = `
+    const HomeRoute = `
     you can have a look at how the API is working by going through the routes in the POSTMAN app:<br>
 
     /doctors/register - for registering a doctor (POST method)<br>
@@ -30,7 +30,7 @@ app.get('/',function(req,res){
     /reports/:status - to show the reports according to the status of the patient (GET method)
   `;
   
-  res.send(apiRoutes);
+  res.send(HomeRoute);
 })
 
 
